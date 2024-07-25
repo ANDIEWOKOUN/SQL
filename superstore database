@@ -26,31 +26,23 @@ VALUES
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
 
-SELECT* 
+#For this project, I used SQL to query the Superstore database to get information about items sold at the store and their prices. 
+
+## Show a specific statistic, how many items in appliances category.
+SELECT category, sum(stock_quantity)
 FROM superstore
-ORDER BY price
-
-SELECT SUM(price)
+WHERE category = "Appliances"
+GROUP BY category;
+#Use a SELECT statement to order the items by price.
+SELECT item_name, price
 FROM superstore
-ORDER BY price
+ORDER BY price desc;
 
-SELECT AVG(PRICE)
+#Show a statistic about the item prices.
+SELECT avg(price)
+FROM superstore;
+
+#Show a statistic about the price for items in the category of "Kitchen Supplies". 
+SELECT avg(price)
 FROM superstore
-order by price
-
-SELECT COUNT(PRICE)
-FROM superstore 
-ORDER BY PRICE
-
-Select max (price)
-FROM superstore
-Order by price
-
-SELECT MIN (price)
-from superstore
-ORDER BY price
-         
-SELECT*
-FROM SUPERSTORE 
-WHERE CATEGORY='Kitchen Supplies'
-
+WHERE category="Kitchen Supplies"
